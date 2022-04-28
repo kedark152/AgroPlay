@@ -1,0 +1,81 @@
+/* Nav bar CSS */
+nav a{
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-image:var(--nav-bg-gradient);
+    padding: 1rem 0.75rem;
+    box-shadow: var(--box-shadow-simple);
+    font-family: var(--georama-font);
+    position: relative;
+    top:0;
+    width: 100%;
+}
+
+.nav-brand a{
+    font-weight: var(--wgt-bold-dark);
+    color: var(--lime-green);
+    font-family: var(--berkshire-font);
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+  
+}
+.nav-brand .material-icons{
+    font-size: 1.8rem;
+    position: absolute;
+    top: 5px;
+}
+
+.nav-pills{
+    display: flex;
+    margin-left: auto;
+    flex: 0 1 12rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-pills i{
+   cursor: pointer;
+   color: var(--white);
+}
+
+.nav-pills a{
+   color: var(--white);
+}
+
+/* Search Bar */
+#search-bar, .search-field{
+    border-radius: 5px;
+    margin-left: auto;
+    background-color: var(--search-bg-color);
+    color: var(--white);
+    
+}
+
+.search-field{
+   position: relative;
+   width: 21.875rem;
+   background-color: var(--search-bg-color);
+}
+
+
+#search-icon{
+    position: absolute;
+    top: 20%;
+    right: 3%; 
+    cursor: pointer;
+}
+
+
+#search-bar{
+    border: none;
+    height: 2.5rem;
+    width: 83%;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
