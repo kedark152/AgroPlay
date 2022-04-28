@@ -1,0 +1,21 @@
+/* Scroll-bar styling */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: lightgrey green;
+}
+  
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+}
