@@ -1,0 +1,48 @@
+.chips{
+    display: flex;
+    grid-area: chipsContainer;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    margin: 1rem;
+    align-items: center;
+    height: max-content;
+    overflow-x: auto;
+}
+
+#basic-chip{
+  font-size: 1rem;
+  margin: 7px 3px;
+  border-radius: 1rem;
+  padding: 10px 20px;
+  background-color: var(--chip-bg-color);
+  color: var(--white);
+  border: 2px solid var(--grey-dark);
+  cursor: pointer;
+  white-space: nowrap;  /* To make sure that line doesn't breaks after space in words */
+ }
+
+ #basic-chip:hover{
+    background-color: black;
+}
+
+
+/* Scroll-bar styling for Chip Container*/
+
+/* Works on Chrome, Edge, and Safari */
+.chips::-webkit-scrollbar {
+    height: 8px;
+    
+}
+
+.chips::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.chips::-webkit-scrollbar-thumb {
+    background-color: var(--success);
+   border-radius: 5px;
+   
+}
+.chips::-webkit-scrollbar-button {
+   width: 3.2rem;
+}
