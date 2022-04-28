@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama&family=Headland+One&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+:root{
+    --chip-bg-color:#1c4646;
+    --nav-bg-gradient: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    --georama-font: 'Georama', sans-serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+    --headland-font: 'Headland', sans-serif;
+    --berkshire-font: 'Berkshire Swash', cursive;
+    --lime-green:#3cf13c;
+    --search-bg-color:#4e5c6b;
+    --dark-black-gradient:linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+}

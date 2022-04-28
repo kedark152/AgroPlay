@@ -1,0 +1,13 @@
+
+.Pages{
+   background: var(--dark-black-gradient);
+   background-blend-mode: multiply;
+    min-height: 100vh;
+    max-height: max-content;
+   font-family: var(--lato-font);
+}
+::placeholder {
+  color: var(--white);
+  opacity: 1; /* Firefox */
+}
+
