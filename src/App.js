@@ -5,11 +5,9 @@ import "./styles/utils/variables.css";
 import { PageRoutes } from "./routes/PageRoutes";
 function App() {
   return (
-    <>
-      <div className="App">
-        <PageRoutes />
-      </div>
-    </>
+    <div className="App">
+      <PageRoutes />
+    </div>
   );
 }
 
