@@ -1,0 +1,49 @@
+.sidebar{
+    padding: 1rem;
+    width: 20vw;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    grid-area: sidebar;
+}
+
+.cell-block{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+    margin: 3px;
+    padding: 0.5rem 0.75rem;  
+    font-size: 1.3rem; 
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.cell:hover{
+    background-color:var(--grey-dark);
+    color: var(--white);
+}
+
+.cell-block a{
+   text-decoration: none;  
+ 
+}
+.cell-block a:visited {
+   text-decoration: none; 
+}
+.cell-block .material-icons{
+    margin-right: 1rem;
+}
+
+.active-cell {
+    background-color: var(--grey-dark);
+    
+}
+.inactive-cell {
+    color: var(--white);
+}
