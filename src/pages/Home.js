@@ -28,7 +28,6 @@ export const Home = () => {
 
   return (
     <>
-      {/* {console.log(displayVideos)} */}
       <div className="Home Pages">
         <Navbar />
 
