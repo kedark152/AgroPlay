@@ -5,27 +5,48 @@ import { Sidebar } from "../components/Sidebar";
 import { VideoCard } from "../components/VideoCard";
 import { GetVideos } from "../services/getVideos";
 import "../styles/pages/home.css";
+import { v4 as uuid } from "uuid";
+import { useState } from "react";
+
 export const Home = () => {
   const { loader, videos } = GetVideos();
-  const displayAllVideos = videos;
-  return (
-    <div className="Home Pages">
-      <Navbar />
+  const [activeChip, setActiveChip] = useState("All");
 
-      <div className="home-page-container">
-        <Sidebar />
-        <ChipsContainer />
-        {loader && <Loader />}
-        <div className="fs-md info-message">
-          {!loader && displayAllVideos.length == 0 && "No Videos Found"}
-        </div>
-        <div className="video-listing">
-          {!loader &&
-            displayAllVideos.map((video) => (
-              <VideoCard key={video._id} videoCardDetails={video} />
-            ))}
+  const getActiveChip = (chipName) => {
+    setActiveChip(chipName);
+  };
+
+  let displayVideos;
+
+  if (activeChip !== "All") {
+    displayVideos = videos.filter((video) =>
+      video.keywords.includes(activeChip)
+    );
+  } else {
+    displayVideos = videos;
+  }
+
+  return (
+    <>
+      {/* {console.log(displayVideos)} */}
+      <div className="Home Pages">
+        <Navbar />
+
+        <div className="home-page-container">
+          <Sidebar />
+          <ChipsContainer getActiveChip={getActiveChip} />
+          {loader && <Loader />}
+          <div className="fs-md info-message">
+            {!loader && displayVideos.length == 0 && "No Videos Found"}
+          </div>
+          <div className="video-listing">
+            {!loader &&
+              displayVideos.map((video) => (
+                <VideoCard key={uuid()} videoCardDetails={video} />
+              ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
