@@ -9,7 +9,7 @@
     overflow-x: auto;
 }
 
-#basic-chip{
+.basic-chip{
   font-size: 1rem;
   margin: 7px 3px;
   border-radius: 1rem;
@@ -21,10 +21,20 @@
   white-space: nowrap;  /* To make sure that line doesn't breaks after space in words */
  }
 
- #basic-chip:hover{
-    background-color: black;
+ .basic-chip:hover{
+    background-color: var(--grey-lightest);
+    color: var(--black);
 }
 
+.active-chip{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.inactive-chip{
+  background-color: var(--chip-bg-color);
+  color: var(--white);
+}
 
 /* Scroll-bar styling for Chip Container*/
 

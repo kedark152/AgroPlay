@@ -16,6 +16,7 @@ export const videos = [
     thumbnailUrl: "http://i3.ytimg.com/vi/SHC7cisa4ds/hq720.jpg",
     thubmnailTitle: "High Budget vs. Low Budget Farming",
     videoUrl: "https://youtu.be/SHC7cisa4ds",
+    keywords: ["Budget Farming", "Indian Farmer"],
     description: "High Budget vs. Low Budget Farming | Indian Farmer",
   },
   {
@@ -31,6 +32,7 @@ export const videos = [
     thumbnailUrl: "http://i3.ytimg.com/vi/Tf57e9yjtZQ/hq720.jpg",
     thubmnailTitle: "Mango Farming Techniques",
     videoUrl: "https://youtu.be/Tf57e9yjtZQ",
+    keywords: ["Fruit Farming", "Indian Farmer"],
     description:
       "COMMERCIAL MANGO FARMING PROFIT & MARKETING | Mango Farming Techniques ",
   },
@@ -47,6 +49,7 @@ export const videos = [
     thumbnailUrl: "http://i3.ytimg.com/vi/IFZqx2KftS4/hq720.jpg",
     thubmnailTitle: "Detailed Tomato Farming Technique",
     videoUrl: "https://youtu.be/IFZqx2KftS4",
+    keywords: ["Vegetable Farming", "The Advance Agriculture"],
     description: "Detailed Tomato Farming Technique ",
   },
   {
@@ -61,6 +64,7 @@ export const videos = [
     videoLength: "14:40",
     thumbnailUrl: "http://i3.ytimg.com/vi/LW5FCxJkFR0/hq720.jpg",
     thubmnailTitle: "Detailed Potato Farming Technique",
+    keywords: ["Vegetable Farming", "Organic Acre"],
     videoUrl: "https://youtu.be/LW5FCxJkFR0",
     description: "Detailed Potato Farming Technique ",
   },
@@ -77,6 +81,7 @@ export const videos = [
     thumbnailUrl: "http://i3.ytimg.com/vi/Ht7YsLEBfpo/hq720.jpg",
     thubmnailTitle: "control Thrips & whitefly in Watermelon & Musk Melon Crop",
     videoUrl: "https://youtu.be/Ht7YsLEBfpo",
+    keywords: ["Pesticides", "Thrips", "Whitefly", "The Advance Agriculture"],
     description: "control Thrips & whitefly in Watermelon & Musk Melon Crop ",
   },
   {
@@ -92,6 +97,7 @@ export const videos = [
     thumbnailUrl: "http://i3.ytimg.com/vi/chEgEGnbaK8/hq720.jpg",
     thubmnailTitle: "Israel Technique Avocado Fruit Farming",
     videoUrl: "https://youtu.be/Ht7YsLEBfpo",
+    keywords: ["Avocado Farming", "Fruit Farming", "Farming Leader"],
     description: "Israel Technique Avocado Fruit Farming",
   },
 ];
