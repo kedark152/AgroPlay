@@ -7,9 +7,6 @@ import { useNavigate } from "react-router-dom";
 export const Navbar = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
-  {
-    console.log(auth);
-  }
   const logoutHandler = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userData");

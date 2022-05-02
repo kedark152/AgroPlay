@@ -23,7 +23,6 @@ export const Login = () => {
   };
 
   const loginHandler = async (loginData) => {
-    console.log("Login Data", loginData);
     try {
       const response = await axios.post("/api/auth/login", loginData);
       localStorage.setItem("userData", JSON.stringify(response.data.foundUser));

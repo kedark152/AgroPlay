@@ -33,8 +33,6 @@ export const Signup = () => {
   };
 
   const signUpHandler = async (signUpData) => {
-    console.log(signUpData);
-
     try {
       const response = await axios.post(`/api/auth/signup`, signUpData);
       // saving the encodedToken in the localStorage
