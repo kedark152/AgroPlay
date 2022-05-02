@@ -43,7 +43,13 @@ nav{
    color: var(--white);
 }
 
-.nav-pills a{
+.nav-pills .btn-solid-icon{
+    margin: 0;
+}
+.nav-pills .btn-solid-icon:hover{
+    background-color: var(--success);
+}
+.nav-pills a, .nav-pills button{
    color: var(--white);
 }
 
