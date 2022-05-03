@@ -5,12 +5,10 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   useEffect(() => {
-    (async () => {
-      const token = localStorage.getItem("token");
-      token
-        ? setAuth({ token: token, isLoggedIn: true })
-        : setAuth({ token: "", isLoggedIn: false });
-    })();
+    const token = localStorage.getItem("token");
+    token
+      ? setAuth({ token: token, isLoggedIn: true })
+      : setAuth({ token: "", isLoggedIn: false });
   }, []);
 
   return (
