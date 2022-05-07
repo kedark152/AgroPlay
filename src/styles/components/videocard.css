@@ -1,6 +1,7 @@
 .video-card-container{
     color: var(--white);
     cursor: pointer;
+    position: relative;
     
 }
 

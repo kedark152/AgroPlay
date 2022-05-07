@@ -1,0 +1,33 @@
+.video-options-box{
+    z-index: 1;
+    font-family: var(--lato-font);
+    position: absolute;
+    bottom: 6.5rem;
+    left: 6rem;
+    box-shadow: var(--small-box-shadow);
+    width: 10rem;
+    height: max-content ;
+    background-color: black;
+    color:var(--white);
+    font-size: 0.9rem;
+    padding: 5px;
+    overflow-y: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.video-options-box li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+      border-radius: 5px;
+}
+.video-options-box li:hover{
+    background-color: var(--grey-dark);
+    
+}
+.video-options-box .material-icons{
+   margin-right: 10px;
+}
