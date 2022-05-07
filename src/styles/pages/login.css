@@ -1,0 +1,81 @@
+.login-container{
+    width: 100%;
+    font-family: var(--montserrat-font);
+    margin: 0;
+    min-height: 100vh;
+    max-height: max-content;
+ }
+ 
+ .login-card{
+    display: flex;
+    flex-direction: column;
+    width: 28rem;
+    color: var(--white);
+    border-radius: var(--radius-md);
+    background: var(--login-bg-color);
+    box-shadow: var(--login-card-shadow);
+    height: fit-content;
+    padding: var(--size-sm) var(--size-md) ;
+    margin: 2rem 0;
+ }
+ 
+ .login-card input{
+  height: var(--size-lg);
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: solid var(--white) 1px;
+  background: none;
+  color:var(--login-input-txt);
+ }
+ 
+ .pwd-show-icon{
+   cursor: pointer;
+ }
+ 
+ 
+ .login-card .btn{
+     padding: var(--size-sm);
+     justify-content: center;
+     width: 100%;
+     margin: 0.5rem;
+     border: 2px solid var(--primary);
+ }
+
+ .login-card .btn-outline:hover{
+     background-color: transparent;
+     border: 2px solid var(--success);
+     color: var(--success);
+ }
+ .login-card .btn-outline-icon{
+     border: none;
+ }
+ .login-card .btn-outline-icon:hover{
+     border: none;
+     background-color: transparent;
+     color: var(--success);
+ }
+ 
+ .password-item{
+     position: relative;
+ }
+ .login-pwd-show-icon{
+     position: absolute;
+     top: 2rem;
+     right: 5px; 
+ }
+ .forgot-password{
+    margin-left: auto;
+     color: var(--white);
+ }
+ .login-card input[type="checkbox"]{
+     width: 1rem;
+     height: 1rem;
+     accent-color: var(--success);
+ }
+ 
+ @media only screen and (max-width: 800px){
+     .login-card{
+         width: fit-content;
+     }
+ }
+
