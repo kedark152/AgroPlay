@@ -3,13 +3,15 @@ import { Navbar } from "../components/Navbar";
 import axios from "axios";
 import { useState, useRef } from "react";
 import { toast } from "react-toastify";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 export const Login = () => {
-  const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const [passwordType, setPasswordType] = useState("password");
   const [testData, setTestData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const editLoginForm = useRef(null);
   const handleLoginForm = (e) => {
@@ -30,7 +32,7 @@ export const Login = () => {
       toast.success("Login Success");
       setAuth({ ...auth, token: response.data.encodedToken, isLoggedIn: true });
       setTestData({ email: "", password: "" });
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error) {
       console.log(error);
       toast.error("Login Failed");
