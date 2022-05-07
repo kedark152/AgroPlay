@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "../styles/components/videocard.css";
+import { VideoOptions } from "./VideoOptions";
 
 export const VideoCard = ({ videoCardDetails }) => {
   const {
@@ -17,6 +19,8 @@ export const VideoCard = ({ videoCardDetails }) => {
     notation: "compact",
     maximumFractionDigits: 1,
   }).format(views);
+
+  const [videoOptionsBox, setVideoOptionsBox] = useState(false);
 
   return (
     <>
@@ -40,8 +44,16 @@ export const VideoCard = ({ videoCardDetails }) => {
               {videoViewsInShort} Views • {uploadDate}
             </p>
           </div>
-          <i className="material-icons mg-top-xsm">more_vert</i>
+          <i
+            className="material-icons mg-top-xsm"
+            onClick={() =>
+              setVideoOptionsBox((videoOptionBox) => !videoOptionBox)
+            }
+          >
+            more_vert
+          </i>
         </div>
+        {videoOptionsBox && <VideoOptions videoId={_id} />}
       </div>
     </>
   );
