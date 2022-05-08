@@ -8,11 +8,11 @@ import "../styles/pages/home.css";
 import { v4 as uuid } from "uuid";
 import { useState } from "react";
 import { PlaylistBox } from "../components/PlaylistBox";
-import { usePlaylist } from "../context/playlist-context";
+import { useVideoAction } from "../context/video-action-context";
 
 export const Home = () => {
   const { loader, videos } = GetVideos();
-  const { playlistState } = usePlaylist();
+  const { videoActionState } = useVideoAction();
   const [activeChip, setActiveChip] = useState("All");
 
   const getActiveChip = (chipName) => {
@@ -46,7 +46,7 @@ export const Home = () => {
               displayVideos.map((video) => (
                 <VideoCard key={uuid()} videoCardDetails={video} />
               ))}
-            {playlistState.setPlaylistBox && <PlaylistBox />}
+            {videoActionState.setPlaylistBox && <PlaylistBox />}
           </div>
         </div>
       </div>
