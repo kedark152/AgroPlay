@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/auth-context";
-export const GetPlaylist = (playlistState) => {
+export const GetPlaylist = (videoActionState) => {
   const { auth } = useAuth();
   const [loader, setLoader] = useState(true);
   const [playlist, setPlaylist] = useState([]);
@@ -20,7 +20,7 @@ export const GetPlaylist = (playlistState) => {
         console.log("Error from getPlaylist.js ", error);
       }
     })(); //IIFE - Immediately Invoked Function
-  }, [auth, playlistState]);
+  }, [auth, videoActionState]);
 
   return { loader, playlist };
 };
