@@ -1,12 +1,12 @@
 import "../styles/components/playlistBox.css";
-import { usePlaylist } from "../context/playlist-context";
+import { useVideoAction } from "../context/video-action-context";
 import { useState } from "react";
 import { PlaylistCheckBox } from "./PlaylistCheckBox";
 import { createNewPlaylist } from "../utils/createNewPlaylist";
 import { useAuth } from "../context/auth-context";
 
 export const PlaylistBox = () => {
-  const { playlistState, dispatchPlaylist } = usePlaylist();
+  const { videoActionState, dispatchVideoAction } = useVideoAction();
   const [playlistValue, setPlaylistValue] = useState("");
   const { auth } = useAuth();
 
@@ -14,7 +14,7 @@ export const PlaylistBox = () => {
     let playlistName = e.target.value;
     if (e.keyCode === 13) {
       setPlaylistValue("");
-      createNewPlaylist(playlistName, dispatchPlaylist, auth);
+      createNewPlaylist(playlistName, dispatchVideoAction, auth);
     }
   };
 
@@ -25,7 +25,7 @@ export const PlaylistBox = () => {
           Add to Playlist{" "}
           <i
             className="material-icons mg-left-lg"
-            onClick={() => dispatchPlaylist({ type: "TOGGLE-PLAYLIST-BOX" })}
+            onClick={() => dispatchVideoAction({ type: "TOGGLE-PLAYLIST-BOX" })}
           >
             close
           </i>
@@ -44,12 +44,12 @@ export const PlaylistBox = () => {
           />
         </div>
         <div className="checkbox-input-wrapper mg-top-xsm">
-          {playlistState.playlist.map((playlist) => (
+          {videoActionState.playlist.map((playlist) => (
             <PlaylistCheckBox
               key={playlist._id}
               playlistId={playlist._id}
               playlistName={playlist.title}
-              videoId={playlistState.activeVideoId}
+              activeVideo={videoActionState.activeVideo}
             />
           ))}
         </div>
