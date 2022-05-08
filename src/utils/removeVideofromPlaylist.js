@@ -6,7 +6,7 @@ export const removeVideoFromPlaylist = async ({
   activeVideo,
   playlistId,
   playlistName,
-  dispatchPlaylist,
+  dispatchVideoAction,
 }) => {
   //Remove Video from Playlist
   try {
@@ -18,14 +18,14 @@ export const removeVideoFromPlaylist = async ({
       },
     });
     const playlist = response.data.playlist;
-    dispatchPlaylist({
+    dispatchVideoAction({
       type: "TOGGLE-TICK-PLAYLIST",
       payload: playlist,
     });
 
     toast.success(`Removed Video from Playlist: ${playlistName}`);
   } catch (error) {
-    console.log("toggleTickPlaylist.js", error);
+    console.log("removeVideoFromPlaylist.js", error);
     toast.error("Error to remove video to playlist", playlistName);
   }
 };
