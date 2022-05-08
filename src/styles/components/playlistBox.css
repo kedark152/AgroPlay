@@ -1,0 +1,56 @@
+.playlist-box-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.600);
+    place-items: center;
+    /* display: none; */
+    z-index: 1; 
+}
+
+.playlist-box-container{
+    z-index: 1;
+    position: absolute;
+    top: 10vh;
+    left: 40vw;
+    box-shadow: var(--login-card-shadow);
+    width: 16.5rem;
+    height: 20rem ;
+    background-color: black;
+    border-radius: 10px;
+    color:var(--white);
+    font-size: 1.2rem;
+    font-family: var(--montserrat-font);
+    padding: 10px;
+    overflow-y: auto;
+    display: block;
+}
+
+.playlist-input-wrapper #typing-playlist{
+  width:96%;
+  border: none;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: grey;
+  margin-top: 5px;
+  font-size: 1rem;
+   color:var(--white);
+}
+
+.checkbox-field input{
+  accent-color:  var(--success);
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+}
+
+.show-playlist-box{
+    display: flex;
+    flex-direction: column;
+}
+.hide-playlist-box{
+    display: none;
+}

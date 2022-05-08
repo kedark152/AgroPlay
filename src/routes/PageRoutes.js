@@ -8,6 +8,7 @@ import { Login } from "../pages/Login";
 import { Signup } from "../pages/Signup";
 import { MyProfile } from "../pages/MyProfile";
 import { Playlist } from "../pages/Playlist";
+import { RequiresAuth } from "./RequiresAuth";
 import { WatchLater } from "../pages/WatchLater";
 
 export const PageRoutes = () => {
@@ -15,7 +16,14 @@ export const PageRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/explore" element={<Explore />} />
-      <Route path="/playlist" element={<Playlist />} />
+      <Route
+        path="/playlist"
+        element={
+          <RequiresAuth>
+            <Playlist />
+          </RequiresAuth>
+        }
+      />
       <Route path="/likedvideos" element={<LikedVideos />} />
       <Route path="/history" element={<History />} />
       <Route path="/watchlater" element={<WatchLater />} />

@@ -4,6 +4,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./context/auth-context";
+import { PlaylistProvider } from "./context/playlist-context";
 
 // Call make Server
 makeServer();
@@ -11,9 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <PlaylistProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </PlaylistProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
