@@ -5,14 +5,14 @@ import { VideoCard } from "../components/VideoCard";
 import { GetPlaylist } from "../services/getPlaylist";
 import { useAuth } from "../context/auth-context";
 import { PlaylistBox } from "../components/PlaylistBox";
-import { usePlaylist } from "../context/playlist-context";
+import { useVideoAction } from "../context/video-action-context";
 import { deletePlaylist } from "../utils/deletePlaylist";
 import "../styles/pages/playlist.css";
 
 export const Playlist = () => {
   const { auth } = useAuth();
-  const { playlistState, dispatchPlaylist } = usePlaylist();
-  const { loader, playlist } = GetPlaylist(playlistState);
+  const { videoActionState, dispatchVideoAction } = useVideoAction();
+  const { loader, playlist } = GetPlaylist(videoActionState);
   const displayPlaylist = playlist;
 
   return (
@@ -40,7 +40,7 @@ export const Playlist = () => {
                         auth,
                         playlistId: playlist._id,
                         playlistName: playlist.title,
-                        dispatchPlaylist,
+                        dispatchVideoAction,
                       })
                     }
                   >
@@ -54,7 +54,7 @@ export const Playlist = () => {
                 </div>
               </div>
             ))}
-          {playlistState.setPlaylistBox && <PlaylistBox />}
+          {videoActionState.setPlaylistBox && <PlaylistBox />}
         </div>
       </div>
     </div>
