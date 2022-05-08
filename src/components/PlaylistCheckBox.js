@@ -1,28 +1,14 @@
-import { usePlaylist } from "../context/playlist-context";
+import { useVideoAction } from "../context/video-action-context";
 import { useAuth } from "../context/auth-context";
 import { addVideoToPlaylist } from "../utils/addVideoToPlaylist";
 import { removeVideoFromPlaylist } from "../utils/removeVideofromPlaylist";
-import { GetVideos } from "../services/getVideos";
 
-export const PlaylistCheckBox = ({ videoId, playlistId, playlistName }) => {
-  const { playlistState, dispatchPlaylist } = usePlaylist();
+export const PlaylistCheckBox = ({ activeVideo, playlistId, playlistName }) => {
+  const { videoActionState, dispatchVideoAction } = useVideoAction();
   const { auth } = useAuth();
-  const { videos } = GetVideos();
-
-  const getVideoById = () => {
-    let videoObject;
-    videos.map((videoObj) => {
-      if (videoObj._id == videoId) {
-        videoObject = videoObj;
-      }
-    });
-    return videoObject;
-  };
-
-  const activeVideo = getVideoById();
 
   const isCheckedPlaylist = (playlistId, videoId) => {
-    return playlistState.playlist
+    return videoActionState.playlist
       .filter((item) => item._id === playlistId)[0]
       .videos.some((item) => item._id === videoId);
   };
@@ -35,22 +21,20 @@ export const PlaylistCheckBox = ({ videoId, playlistId, playlistName }) => {
           key={playlistId}
           id={playlistId}
           onChange={(e) => {
-            // e.stopImmediatePropagation;
             let playlistCheckedStatus = e.target.checked;
             const params = {
               auth,
               activeVideo,
               playlistId,
               playlistName,
-              dispatchPlaylist,
+              dispatchVideoAction,
             };
 
             playlistCheckedStatus
               ? addVideoToPlaylist(params)
               : removeVideoFromPlaylist(params);
           }}
-          // checked="true"
-          checked={isCheckedPlaylist(playlistId, videoId)}
+          checked={isCheckedPlaylist(playlistId, activeVideo._id)}
         />
         <label htmlFor={playlistId}>{playlistName}</label>
       </div>
