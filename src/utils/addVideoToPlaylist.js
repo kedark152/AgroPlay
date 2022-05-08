@@ -6,7 +6,7 @@ export const addVideoToPlaylist = async ({
   activeVideo,
   playlistId,
   playlistName,
-  dispatchPlaylist,
+  dispatchVideoAction,
 }) => {
   //Add Video to Playlist
   try {
@@ -22,14 +22,14 @@ export const addVideoToPlaylist = async ({
     });
     const playlist = response.data.playlist;
 
-    dispatchPlaylist({
+    dispatchVideoAction({
       type: "TOGGLE-TICK-PLAYLIST",
       payload: playlist,
     });
 
     toast.success(`Added Video to Playlist: ${playlistName}`);
   } catch (error) {
-    console.log("toggleTickPlaylist.js", error);
+    console.log("addVideoToPlaylist.js", error);
     toast.error("Error to add video to playlist", playlistName);
   }
 };
