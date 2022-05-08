@@ -7,7 +7,7 @@
   "sidebar  videoList videoList";
 }
 
-.video-listing{
+.playlist-page-container .video-listing{
     grid-area: videoList;
     display: grid;
     width: 100%;
@@ -19,7 +19,7 @@
     position: relative;
 }
 
-.info-message{
+.playlist-page-container .info-message{
     position: absolute;
     left: 20rem;
     top: 10rem;
