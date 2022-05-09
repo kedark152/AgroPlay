@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export const createNewPlaylist = async (
   playlistName,
-  dispatchPlaylist,
+  dispatchVideoAction,
   auth
 ) => {
   try {
@@ -17,7 +17,7 @@ export const createNewPlaylist = async (
       }
     );
     const playlists = response.data.playlists;
-    dispatchPlaylist({
+    dispatchVideoAction({
       type: "CREATE-NEW-PLAYLIST",
       payload: playlists,
     });

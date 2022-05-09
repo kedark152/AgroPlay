@@ -1,10 +1,10 @@
-export const playlistReducer = (state, { type, payload }) => {
+export const videoActionReducer = (state, { type, payload }) => {
   switch (type) {
     case "TOGGLE-PLAYLIST-BOX":
       return {
         ...state,
         setPlaylistBox: !state.setPlaylistBox,
-        activeVideoId: !state.setPlaylistBox ? payload : "",
+        activeVideo: !state.setPlaylistBox ? payload : {},
       };
     case "CREATE-NEW-PLAYLIST":
     case "DELETE-PLAYLIST":
@@ -13,18 +13,32 @@ export const playlistReducer = (state, { type, payload }) => {
         ...state,
         playlist: payload,
       };
-    case "TOGGLE-TICK-PLAYLIST":
+    case "TOGGLE-TICK-PLAYLIST": // add/remove video from playlist
       return {
         ...state,
         playlist: toggleTickPlaylist(state, payload),
       };
+    case "ADD-TO-WATCH-LATER":
+    case "REMOVE-FROM-WATCH-LATER":
+      return {
+        ...state,
+        watchlater: payload,
+      };
+    case "ADD-TO-LIKES":
+    case "REMOVE-FROM-LIKES":
+      return {
+        ...state,
+        likes: payload,
+      };
   }
 };
 
-export const playlistInitialState = {
+export const videoActionInitialState = {
   setPlaylistBox: false,
-  activeVideoId: "",
+  activeVideo: {},
   playlist: [],
+  watchlater: [],
+  likes: [],
 };
 
 function toggleTickPlaylist(state, payload) {

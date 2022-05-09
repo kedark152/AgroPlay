@@ -5,9 +5,8 @@ export const deletePlaylist = async ({
   auth,
   playlistId,
   playlistName,
-  dispatchPlaylist,
+  dispatchVideoAction,
 }) => {
-
   try {
     const response = await axios({
       url: `/api/user/playlists/${playlistId}`,
@@ -18,7 +17,7 @@ export const deletePlaylist = async ({
     });
     const playlist = response.data.playlists;
 
-    dispatchPlaylist({
+    dispatchVideoAction({
       type: "DELETE-PLAYLIST",
       payload: playlist,
     });

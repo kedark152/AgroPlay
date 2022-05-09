@@ -53,7 +53,7 @@ export const VideoCard = ({ videoCardDetails }) => {
             more_vert
           </i>
         </div>
-        {videoOptionsBox && <VideoOptions videoId={_id} />}
+        {videoOptionsBox && <VideoOptions activeVideo={videoCardDetails} />}
       </div>
     </>
   );

@@ -24,9 +24,24 @@ export const PageRoutes = () => {
           </RequiresAuth>
         }
       />
-      <Route path="/likedvideos" element={<LikedVideos />} />
+      <Route
+        path="/watchlater"
+        element={
+          <RequiresAuth>
+            <WatchLater />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/likedvideos"
+        element={
+          <RequiresAuth>
+            <LikedVideos />
+          </RequiresAuth>
+        }
+      />
+
       <Route path="/history" element={<History />} />
-      <Route path="/watchlater" element={<WatchLater />} />
       <Route path="/profile" element={<MyProfile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />

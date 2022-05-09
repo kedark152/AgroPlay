@@ -1,4 +1,4 @@
-.playlist-page-container{
+.liked-videos-page-container{
   display: grid;
   grid-template-columns: 20vw 1fr;
   grid-auto-rows: minmax(min-content, max-content);
@@ -7,7 +7,7 @@
   "sidebar  videoList videoList";
 }
 
-.playlist-page-container .video-listing{
+.liked-videos-page-container .video-listing{
     grid-area: videoList;
     display: grid;
     width: 100%;
@@ -19,7 +19,7 @@
     position: relative;
 }
 
-.playlist-page-container .info-message{
+.liked-videos-page-container .info-message{
     position: absolute;
     left: 20rem;
     top: 10rem;
