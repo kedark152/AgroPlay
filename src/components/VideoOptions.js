@@ -6,10 +6,17 @@ import { addToWatchLater } from "../utils/addToWatchLater";
 import { removeFromWatchLater } from "../utils/removeFromWatchLater";
 import { addToLikes } from "../utils/addToLikes";
 import { removeFromLikes } from "../utils/removeFromLikes";
+import { removeFromHistory } from "../utils/removeFromHistory";
 
 export const VideoOptions = ({ activeVideo }) => {
   const { videoActionState, dispatchVideoAction } = useVideoAction();
   const { auth } = useAuth();
+
+  const isHistoryPage = () => {
+    let currentPathname = window.location.pathname;
+    return currentPathname === "/history" ? true : false;
+  };
+
   const isInWatchLaterList = (videoId) => {
     return videoActionState.watchlater.some((item) => item._id === videoId);
   };
@@ -65,6 +72,20 @@ export const VideoOptions = ({ activeVideo }) => {
               ? `Remove from liked videos`
               : `Add to liked videos`}
           </li>
+          {isHistoryPage() && (
+            <li
+              onClick={() =>
+                removeFromHistory({
+                  auth,
+                  activeVideo,
+                  dispatchVideoAction,
+                })
+              }
+            >
+              <i className="material-icons">delete</i>
+              Remove from History
+            </li>
+          )}
         </ul>
       </RequiresAuth>
     </div>
