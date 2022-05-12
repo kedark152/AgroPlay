@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useVideoAction } from "../context/video-action-context";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
+  const { dispatchVideoAction } = useVideoAction();
   const logoutHandler = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userData");
     setAuth({ ...auth, token: "", isLoggedIn: false });
     toast.success("Log out Success");
     navigate("/");
+    dispatchVideoAction({ type: "CLEAR-STATE" });
   };
   return (
     <>
