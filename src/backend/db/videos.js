@@ -5,7 +5,7 @@
 
 export const videos = [
   {
-    _id: "9KGukRIIyr",
+    _id: "SHC7cisa4ds",
     title: "Jugaad vs. High Budget Farming | Indian Farmer",
     creator: "Indian Farmer",
     profileUrl:
@@ -20,7 +20,7 @@ export const videos = [
     description: "High Budget vs. Low Budget Farming | Indian Farmer",
   },
   {
-    _id: "5PI1a5E3Ql",
+    _id: "Tf57e9yjtZQ",
     title:
       "Mango Farming Video  | ऐसे स्मार्ट किसानों के वजह से ही खेती टिकी हुई हैं  ",
     creator: "Indian Farmer",
@@ -37,7 +37,7 @@ export const videos = [
       "COMMERCIAL MANGO FARMING PROFIT & MARKETING | Mango Farming Techniques ",
   },
   {
-    _id: "NDLkd8b7yR",
+    _id: "IFZqx2KftS4",
     title:
       "Tomato farming | टमाटर की खेती से कमाये लाखो रूपये | टमाटर की खेती | Full Video | A2Z जानकारी",
     creator: "The Advance Agriculture",
@@ -53,7 +53,7 @@ export const videos = [
     description: "Detailed Tomato Farming Technique ",
   },
   {
-    _id: "DmlC9SSM4E",
+    _id: "LW5FCxJkFR0",
     title:
       "Profitable Potato farming 🥔 Seed to harvest | आलू की खेती की पूरी जानकारी",
     creator: "Organic Acre",
@@ -69,7 +69,7 @@ export const videos = [
     description: "Detailed Potato Farming Technique ",
   },
   {
-    _id: "Z2UnZdcXYu",
+    _id: "Ht7YsLEBfpo",
     title:
       "How to control Thrips & whitefly in Watermelon & Musk Melon Crop | Solomon |Alika |Bio R-303 |tarbuj",
     creator: "The Advance Agriculture",
@@ -85,7 +85,7 @@ export const videos = [
     description: "control Thrips & whitefly in Watermelon & Musk Melon Crop ",
   },
   {
-    _id: "EKcLLHgDhb",
+    _id: "chEgEGnbaK8",
     title:
       " Israel Technique Avocado Fruit Farming 1200रू Kg बिकने वाले एवोकाडो से कमाये लाखों इजराइल तकनीक से",
     creator: "Farming Leader",
@@ -96,7 +96,7 @@ export const videos = [
     videoLength: "17:15",
     thumbnailUrl: "https://i3.ytimg.com/vi/chEgEGnbaK8/hq720.jpg",
     thubmnailTitle: "Israel Technique Avocado Fruit Farming",
-    videoUrl: "https://youtu.be/Ht7YsLEBfpo",
+    videoUrl: "https://youtu.be/chEgEGnbaK8",
     keywords: ["Avocado Farming", "Fruit Farming", "Farming Leader"],
     description: "Israel Technique Avocado Fruit Farming",
   },
