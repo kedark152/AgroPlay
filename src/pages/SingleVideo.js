@@ -7,10 +7,10 @@ import { toast } from "react-toastify";
 import { useVideoAction } from "../context/video-action-context";
 import { useAuth } from "../context/auth-context";
 import { useParams } from "react-router-dom";
-import { addToWatchLater } from "../utils/addToWatchLater";
-import { removeFromWatchLater } from "../utils/removeFromWatchLater";
-import { addToLikes } from "../utils/addToLikes";
-import { removeFromLikes } from "../utils/removeFromLikes";
+import { addToWatchLater } from "../services/addToWatchLater";
+import { removeFromWatchLater } from "../services/removeFromWatchLater";
+import { addToLikes } from "../services/addToLikes";
+import { removeFromLikes } from "../services/removeFromLikes";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/pages/singlevideo.css";
 

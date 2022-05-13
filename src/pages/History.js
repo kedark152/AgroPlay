@@ -5,7 +5,7 @@ import { VideoCard } from "../components/VideoCard";
 import { GetHistoryList } from "../services/getHistoryList";
 import { PlaylistBox } from "../components/PlaylistBox";
 import { useVideoAction } from "../context/video-action-context";
-import { deleteHistory } from "../utils/deleteHistory";
+import { deleteHistory } from "../services/deleteHistory";
 import { v4 as uuid } from "uuid";
 import "../styles/pages/history.css";
 import { useAuth } from "../context/auth-context";

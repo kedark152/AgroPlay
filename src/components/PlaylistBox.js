@@ -2,7 +2,7 @@ import "../styles/components/playlistBox.css";
 import { useVideoAction } from "../context/video-action-context";
 import { useState } from "react";
 import { PlaylistCheckBox } from "./PlaylistCheckBox";
-import { createNewPlaylist } from "../utils/createNewPlaylist";
+import { createNewPlaylist } from "../services/createNewPlaylist";
 import { useAuth } from "../context/auth-context";
 
 export const PlaylistBox = () => {

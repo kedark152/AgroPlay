@@ -6,7 +6,7 @@ import { GetPlaylist } from "../services/getPlaylist";
 import { useAuth } from "../context/auth-context";
 import { PlaylistBox } from "../components/PlaylistBox";
 import { useVideoAction } from "../context/video-action-context";
-import { deletePlaylist } from "../utils/deletePlaylist";
+import { deletePlaylist } from "../services/deletePlaylist";
 import "../styles/pages/playlist.css";
 
 export const Playlist = () => {
