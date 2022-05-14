@@ -3,50 +3,28 @@ import { Sidebar } from "../components/Sidebar";
 import { Loader } from "../components/Loader";
 import { PlaylistBox } from "../components/PlaylistBox";
 import { GetVideoById } from "../services/getVideoById";
-import { toast } from "react-toastify";
 import { useVideoAction } from "../context/video-action-context";
 import { useAuth } from "../context/auth-context";
 import { useParams } from "react-router-dom";
-import { addToWatchLater } from "../services/addToWatchLater";
-import { removeFromWatchLater } from "../services/removeFromWatchLater";
-import { addToLikes } from "../services/addToLikes";
-import { removeFromLikes } from "../services/removeFromLikes";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/pages/singlevideo.css";
+import { useSingleVideoBtns } from "../custom-hooks/useSingleVideoBtns";
+import { useVideoOnClickHandler } from "../custom-hooks/useVideoOnClickHandler";
+import { useEffect } from "react";
 
 export const SingleVideo = () => {
   const { videoId } = useParams();
   const navigate = useNavigate();
   const { auth } = useAuth();
   const { loader, video } = GetVideoById(videoId);
-  const { videoActionState, dispatchVideoAction } = useVideoAction();
+  const { videoActionState } = useVideoAction();
   const { pathname } = useLocation();
+  const { watchListBtnState, likeBtnState } = useSingleVideoBtns(videoId); //custom hook
+  const { setOnClickAction } = useVideoOnClickHandler(video); //custom hook
 
-  const isInWatchLaterList = (videoId) => {
-    const watchStatus = videoActionState.watchlater.some(
-      (item) => item._id === videoId
-    );
-    let mainRes = watchStatus
-      ? { result: "IN WATCH LATER", style: "active-option", status: true }
-      : { result: "WATCH LATER", style: "", status: false };
-
-    return mainRes;
-  };
-
-  const isInLikesList = (videoId) => {
-    const likeStatus = videoActionState.likes.some(
-      (item) => item._id === videoId
-    );
-    let mainRes = likeStatus
-      ? { result: "LIKED", style: "active-option", status: true }
-      : { result: " LIKE", style: "", status: false };
-
-    return mainRes;
-  };
-
-  const onClickHandler = (id) => {
+  const onClickHandler = (action) => {
     if (auth.isLoggedIn) {
-      onActionClickHandler(id);
+      setOnClickAction(action);
     } else {
       navigate(
         "/login",
@@ -56,54 +34,13 @@ export const SingleVideo = () => {
     }
   };
 
-  const onActionClickHandler = (id) => {
-    switch (id) {
-      case "like-video":
-        {
-          isInLikesList(videoId).status
-            ? removeFromLikes({
-                auth,
-                activeVideo: video,
-                dispatchVideoAction,
-              })
-            : addToLikes({ auth, activeVideo: video, dispatchVideoAction });
-        }
-        break;
-      case "playlist-video":
-        {
-          dispatchVideoAction({
-            type: "TOGGLE-PLAYLIST-BOX",
-            payload: video,
-            token: auth.token,
-          });
-        }
-        break;
-      case "watch-later-video":
-        {
-          isInWatchLaterList(videoId).status
-            ? removeFromWatchLater({
-                auth,
-                activeVideo: video,
-                dispatchVideoAction,
-              })
-            : addToWatchLater({
-                auth,
-                activeVideo: video,
-                dispatchVideoAction,
-              });
-        }
-        break;
-      case "copy-link-video":
-        {
-          navigator.clipboard.writeText(window.location.href);
-          toast.success("Link Copied to Clipboard");
-        }
-        break;
-
-      default:
-        break;
+  //add video to history on page render
+  useEffect(() => {
+    if (!loader && auth.isLoggedIn) {
+      setOnClickAction("add-to-history");
     }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auth, loader]);
 
   return (
     <>
@@ -117,8 +54,7 @@ export const SingleVideo = () => {
               <div className="video-responsive">
                 <iframe
                   className="youTube-iframe"
-                  src={`https://www.youtube.com/embed/${video._id}?autoplay=1`}
-                  title="YouTube video player"
+                  src={`https://youtube.com/embed/${video._id}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -127,37 +63,33 @@ export const SingleVideo = () => {
               <div className="video-action-buttons">
                 <ul className="flex fw-bold ">
                   <li
-                    id="like-video"
-                    onClick={(e) => onClickHandler(e.target.id)}
-                    className={`align-center mg-xsm ${
-                      isInLikesList(videoId).style
-                    }`}
+                    // id="like-video"
+                    onClick={() => onClickHandler("like-video")}
+                    className={`align-center mg-xsm ${likeBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">thumb_up</i>
-                    {`${isInLikesList(videoId).result}`}
+                    {`${likeBtnState.text}`}
                   </li>
                   <li
-                    id="playlist-video"
-                    onClick={(e) => onClickHandler(e.target.id)}
+                    // id="playlist-video"
+                    onClick={() => onClickHandler("playlist-video")}
                     className="align-center mg-xsm"
                   >
                     <i className="material-icons mg-right-xsm">playlist_add</i>
                     SAVE
                   </li>
                   <li
-                    id="watch-later-video"
-                    onClick={(e) => onClickHandler(e.target.id)}
-                    className={`align-center mg-xsm ${
-                      isInWatchLaterList(videoId).style
-                    }`}
+                    // id="watch-later-video"
+                    onClick={() => onClickHandler("watch-later-video")}
+                    className={`align-center mg-xsm ${watchListBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">schedule</i>
-                    {`${isInWatchLaterList(videoId).result}`}
+                    {`${watchListBtnState.text}`}
                   </li>
                   <li
-                    id="copy-link-video"
+                    // id="copy-link-video"
                     className="align-center mg-xsm"
-                    onClick={(e) => onClickHandler(e.target.id)}
+                    onClick={() => onClickHandler("copy-link-video")}
                   >
                     <i className="material-icons mg-right-xsm">link</i>
                     COPY LINK
