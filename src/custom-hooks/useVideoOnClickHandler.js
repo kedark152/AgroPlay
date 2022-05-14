@@ -10,6 +10,7 @@ import { useVideoAction } from "../context/video-action-context";
 import { useAuth } from "../context/auth-context";
 import { useSingleVideoBtns } from "./useSingleVideoBtns";
 import { toast } from "react-toastify";
+import { USER_ACTIONS } from "./constants";
 
 export const useVideoOnClickHandler = (activeVideo) => {
   const { dispatchVideoAction } = useVideoAction();
@@ -76,22 +77,22 @@ export const useVideoOnClickHandler = (activeVideo) => {
 
   useEffect(() => {
     switch (onClickAction) {
-      case "like-video":
+      case USER_ACTIONS.LIKE_VIDEO:
         likeVideoOnClickHandler();
         break;
-      case "playlist-video":
+      case USER_ACTIONS.PLAYLIST_VIDEO:
         playlistOnClickHandler();
         break;
-      case "watch-later-video":
+      case USER_ACTIONS.WATCH_LATER_VIDEO:
         watchLaterOnClickHandler();
         break;
-      case "copy-link-video":
+      case USER_ACTIONS.COPY_LINK_VIDEO:
         copyVideoOnClickHandler();
         break;
-      case "add-to-history":
+      case USER_ACTIONS.ADD_TO_HISTORY:
         addToHistoryOnRender();
         break;
-      case "remove-from-history":
+      case USER_ACTIONS.REMOVE_FROM_HISTORY:
         removeFromHistoryOnClick();
         break;
       default:
