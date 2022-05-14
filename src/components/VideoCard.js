@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/auth-context";
-import { useVideoAction } from "../context/video-action-context";
+
 import "../styles/components/videocard.css";
-import { addToHistory } from "../services/addToHistory";
+
 import { VideoOptions } from "./VideoOptions";
 
 export const VideoCard = ({ videoCardDetails }) => {
-  const { auth } = useAuth();
-  const { videoActionState, dispatchVideoAction } = useVideoAction();
   const navigate = useNavigate();
 
   const {
@@ -28,17 +25,7 @@ export const VideoCard = ({ videoCardDetails }) => {
     maximumFractionDigits: 1,
   }).format(views);
 
-  const isInHistoryList = (videoId) => {
-    return videoActionState.history.some((item) => item._id === videoId);
-  };
   const openVideoHandler = () => {
-    if (auth.isLoggedIn && !isInHistoryList(_id)) {
-      addToHistory({
-        auth,
-        activeVideo: videoCardDetails,
-        dispatchVideoAction,
-      });
-    }
     navigate(`/watch/${_id}`);
   };
 
