@@ -1,0 +1,41 @@
+.single-video-page-container{
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 6rem max-content;
+  grid-template-areas: 
+  "sidebar  singleVideo singleVideo"
+  "sidebar  singleVideo singleVideo";
+}
+.single-video{
+    grid-area: singleVideo;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 46.25%;
+  position: relative;
+  height: 0;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.video-responsive .youTube-iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.video-action-buttons li{
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.video-action-buttons li:hover{
+  background-color: var(--grey-dark);
+}
+
+.active-option{
+  background-color: var(--success);
+}

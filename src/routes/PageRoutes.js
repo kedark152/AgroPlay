@@ -10,6 +10,7 @@ import { MyProfile } from "../pages/MyProfile";
 import { Playlist } from "../pages/Playlist";
 import { RequiresAuth } from "./RequiresAuth";
 import { WatchLater } from "../pages/WatchLater";
+import { SingleVideo } from "../pages/SingleVideo";
 
 export const PageRoutes = () => {
   return (
@@ -40,11 +41,19 @@ export const PageRoutes = () => {
           </RequiresAuth>
         }
       />
+      <Route
+        path="/history"
+        element={
+          <RequiresAuth>
+            <History />
+          </RequiresAuth>
+        }
+      />
 
-      <Route path="/history" element={<History />} />
       <Route path="/profile" element={<MyProfile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/watch/:videoId" element={<SingleVideo />} />
       <Route path="/mock" element={<Mockman />} />
     </Routes>
   );

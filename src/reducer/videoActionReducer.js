@@ -30,6 +30,24 @@ export const videoActionReducer = (state, { type, payload }) => {
         ...state,
         likes: payload,
       };
+    case "ADD-TO-HISTORY":
+    case "REMOVE-FROM-HISTORY":
+    case "DELETE-HISTORY":
+      return {
+        ...state,
+        history: payload,
+      };
+    case "UPDATE-STATE-ON-LOGIN":
+      return {
+        ...state,
+        playlist: payload.playlists,
+        watchlater: payload.watchlater,
+        likes: payload.likes,
+        history: payload.history,
+      };
+
+    case "CLEAR-STATE":
+      return videoActionInitialState;
   }
 };
 
@@ -39,6 +57,7 @@ export const videoActionInitialState = {
   playlist: [],
   watchlater: [],
   likes: [],
+  history: [],
 };
 
 function toggleTickPlaylist(state, payload) {

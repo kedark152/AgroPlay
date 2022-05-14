@@ -5,8 +5,11 @@ import { useState, useRef } from "react";
 import { toast } from "react-toastify";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
+import { useVideoAction } from "../context/video-action-context";
+
 export const Login = () => {
   const { auth, setAuth } = useAuth();
+  const { dispatchVideoAction } = useVideoAction();
   const [passwordType, setPasswordType] = useState("password");
   const [testData, setTestData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
@@ -24,15 +27,20 @@ export const Login = () => {
     editLoginForm.current.reset();
   };
 
+  const updateVideoActionState = (dataObj) => {
+    dispatchVideoAction({ type: "UPDATE-STATE-ON-LOGIN", payload: dataObj });
+  };
+
   const loginHandler = async (loginData) => {
     try {
       const response = await axios.post("/api/auth/login", loginData);
       localStorage.setItem("userData", JSON.stringify(response.data.foundUser));
       localStorage.setItem("token", response.data.encodedToken);
-      toast.success("Login Success");
+      updateVideoActionState(response.data.foundUser);
       setAuth({ ...auth, token: response.data.encodedToken, isLoggedIn: true });
       setTestData({ email: "", password: "" });
       navigate(from, { replace: true });
+      toast.success("Login Success");
     } catch (error) {
       console.log(error);
       toast.error("Login Failed");

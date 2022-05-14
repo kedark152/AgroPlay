@@ -1,7 +1,7 @@
 import { useVideoAction } from "../context/video-action-context";
 import { useAuth } from "../context/auth-context";
-import { addVideoToPlaylist } from "../utils/addVideoToPlaylist";
-import { removeVideoFromPlaylist } from "../utils/removeVideofromPlaylist";
+import { addVideoToPlaylist } from "../services/addVideoToPlaylist";
+import { removeVideoFromPlaylist } from "../services/removeVideofromPlaylist";
 
 export const PlaylistCheckBox = ({ activeVideo, playlistId, playlistName }) => {
   const { videoActionState, dispatchVideoAction } = useVideoAction();

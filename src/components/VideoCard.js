@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../styles/components/videocard.css";
+
 import { VideoOptions } from "./VideoOptions";
 
 export const VideoCard = ({ videoCardDetails }) => {
+  const navigate = useNavigate();
+
   const {
     _id,
     title,
@@ -20,6 +25,10 @@ export const VideoCard = ({ videoCardDetails }) => {
     maximumFractionDigits: 1,
   }).format(views);
 
+  const openVideoHandler = () => {
+    navigate(`/watch/${_id}`);
+  };
+
   const [videoOptionsBox, setVideoOptionsBox] = useState(false);
 
   return (
@@ -29,6 +38,7 @@ export const VideoCard = ({ videoCardDetails }) => {
           className="thumbnail-img"
           src={thumbnailUrl}
           alt={thumbnailTitle}
+          onClick={openVideoHandler}
         />
 
         <div className="video-details flex">
@@ -37,7 +47,12 @@ export const VideoCard = ({ videoCardDetails }) => {
             <p className="video-time">{videoLength}</p>
           </div>
           <div className="video-details-text flex-column mg-y-xsm">
-            <p className="video-title fw-bold">{title}</p>
+            <p
+              onClick={openVideoHandler}
+              className="video-title fw-bold white-color"
+            >
+              {title}
+            </p>
 
             <p className="creator-name">{creator}</p>
             <p className="views-and-date">

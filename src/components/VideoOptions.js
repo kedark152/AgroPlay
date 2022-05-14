@@ -1,70 +1,45 @@
 import "../styles/components/videoOptions.css";
-import { useVideoAction } from "../context/video-action-context";
 import { RequiresAuth } from "../routes/RequiresAuth";
-import { useAuth } from "../context/auth-context";
-import { addToWatchLater } from "../utils/addToWatchLater";
-import { removeFromWatchLater } from "../utils/removeFromWatchLater";
-import { addToLikes } from "../utils/addToLikes";
-import { removeFromLikes } from "../utils/removeFromLikes";
+import { useSingleVideoBtns } from "../custom-hooks/useSingleVideoBtns";
+import { useVideoOnClickHandler } from "../custom-hooks/useVideoOnClickHandler";
 
 export const VideoOptions = ({ activeVideo }) => {
-  const { videoActionState, dispatchVideoAction } = useVideoAction();
-  const { auth } = useAuth();
-  const isInWatchLaterList = (videoId) => {
-    return videoActionState.watchlater.some((item) => item._id === videoId);
-  };
-  const isInLikesList = (videoId) => {
-    return videoActionState.likes.some((item) => item._id === videoId);
+  const inHistoryPage = () => {
+    let currentPathname = window.location.pathname;
+    return currentPathname === "/history" ? true : false;
   };
 
-  const watchLaterOnClickHandler = () => {
-    isInWatchLaterList(activeVideo._id)
-      ? removeFromWatchLater({
-          auth,
-          activeVideo,
-          dispatchVideoAction,
-        })
-      : addToWatchLater({ auth, activeVideo, dispatchVideoAction });
-  };
-
-  const likeVideoOnClickHandler = () => {
-    isInLikesList(activeVideo._id)
-      ? removeFromLikes({
-          auth,
-          activeVideo,
-          dispatchVideoAction,
-        })
-      : addToLikes({ auth, activeVideo, dispatchVideoAction });
-  };
+  const { watchListBtnState, likeBtnState } = useSingleVideoBtns(
+    activeVideo._id
+  ); //custom-hook
+  const { setOnClickAction } = useVideoOnClickHandler(activeVideo); //custom hook
 
   return (
     <div className="video-options-box flex-column">
       <RequiresAuth>
         <ul>
-          <li onClick={watchLaterOnClickHandler}>
+          <li onClick={() => setOnClickAction("watch-later-video")}>
             <i className="material-icons">watch_later</i>
-            {isInWatchLaterList(activeVideo._id)
+            {watchListBtnState.status
               ? `Remove from watch later`
               : `Save to watch later`}
           </li>
-          <li
-            onClick={() =>
-              dispatchVideoAction({
-                type: "TOGGLE-PLAYLIST-BOX",
-                payload: activeVideo,
-                token: auth.token,
-              })
-            }
-          >
+          <li onClick={() => setOnClickAction("playlist-video")}>
             <i className="material-icons">playlist_add</i>
             Save to playlist
           </li>
-          <li onClick={likeVideoOnClickHandler}>
+          <li onClick={() => setOnClickAction("like-video")}>
             <i className="material-icons">thumb_up</i>
-            {isInLikesList(activeVideo._id)
+            {likeBtnState.status
               ? `Remove from liked videos`
               : `Add to liked videos`}
           </li>
+          {inHistoryPage() && (
+            <li onClick={() => setOnClickAction("remove-from-history")}>
+              <i className="material-icons">delete</i>
+              Remove from History
+            </li>
+          )}
         </ul>
       </RequiresAuth>
     </div>
