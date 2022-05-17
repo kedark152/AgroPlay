@@ -4,9 +4,11 @@ import { useAuth } from "../context/auth-context";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useVideoAction } from "../context/video-action-context";
+import { useLocation } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ setSearchQuery }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { auth, setAuth } = useAuth();
   const { dispatchVideoAction } = useVideoAction();
   const logoutHandler = () => {
@@ -26,7 +28,11 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="search-field">
-          <i className="material-icons" id="search-icon">
+          <i
+            className="material-icons"
+            id="search-icon"
+            onClick={() => navigate("/search")}
+          >
             search
           </i>
 
@@ -35,6 +41,11 @@ export const Navbar = () => {
             name="search-bar"
             id="search-bar"
             placeholder="Search"
+            onClick={() => navigate("/search")}
+            onChange={(e) => {
+              setSearchQuery(e.target.value.toLowerCase());
+            }}
+            autoFocus={location.pathname === "/search"}
           />
         </div>
         <ul className="nav-pills fs-sm fw-bold ">
