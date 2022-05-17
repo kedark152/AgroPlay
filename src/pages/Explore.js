@@ -13,7 +13,6 @@ export const Explore = () => {
   const { loader, videos } = GetVideos();
   const { videoActionState } = useVideoAction();
   const [activeCard, setActiveCard] = useState("");
-  console.log(activeCard);
 
   let displayVideos = [];
 

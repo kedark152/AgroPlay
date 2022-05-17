@@ -14,12 +14,11 @@ export const SearchPage = () => {
   const { videoActionState } = useVideoAction();
   const [searchQuery, setSearchQuery] = useState("");
   let displayVideos = [];
-  console.log(searchQuery.length);
+
   if (!loader && searchQuery.length > 1) {
     displayVideos = videos.filter((video) =>
       video.title.toLowerCase().includes(searchQuery)
     );
-    console.log(displayVideos);
   }
   return (
     <div className="Search Pages">
