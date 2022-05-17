@@ -1,0 +1,21 @@
+.error-page-container{
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 6rem max-content;
+  grid-template-areas: 
+  "sidebar  errorImage errorImage"
+  "sidebar  errorImage errorImage";
+}
+
+.error-image-cont{
+    grid-area: errorImage;
+    display: grid;
+    justify-content: center;
+    margin-top: 1rem;
+    
+}
+
+.error-img{
+  height: 80vh;
+
+}
