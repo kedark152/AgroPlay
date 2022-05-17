@@ -1,0 +1,25 @@
+.category-box{
+    justify-content: flex-start;
+    color: var(--white);
+    border-radius: 1rem;
+    background-color: var(--category-bg-color);
+    cursor: pointer;
+    border: 2px solid var(--category-bg-color);
+}
+.category-box:hover{
+    background-color: var(--chip-bg-color);
+    border: 2px solid var(--success);
+}
+
+.category-box .category-icon{
+   width: 60px;
+   height: 60px;
+}
+
+.active-card{
+    background-color: var(--chip-bg-color);
+    border: 2px solid var(--white);
+}
+.inactive-card{
+    background-color: var(--category-bg-color);
+}
