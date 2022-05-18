@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PlaylistCheckBox } from "./PlaylistCheckBox";
 import { createNewPlaylist } from "../services/createNewPlaylist";
 import { useAuth } from "../context/auth-context";
+import { toast } from "react-toastify";
 
 export const PlaylistBox = () => {
   const { videoActionState, dispatchVideoAction } = useVideoAction();
@@ -12,9 +13,17 @@ export const PlaylistBox = () => {
 
   const TypeNewPlaylist = (e) => {
     let playlistName = e.target.value;
+
     if (e.keyCode === 13) {
-      setPlaylistValue("");
-      createNewPlaylist(playlistName, dispatchVideoAction, auth);
+      console.log(videoActionState.playlist);
+      if (!playlistName || /^\s*$/.test(playlistName)) {
+        //For checking if a playlistName is falsey or if the playlistName only contains whitespace
+        toast.error("Please enter valid playlist name");
+        setPlaylistValue("");
+      } else {
+        setPlaylistValue("");
+        createNewPlaylist(playlistName, dispatchVideoAction, auth);
+      }
     }
   };
 

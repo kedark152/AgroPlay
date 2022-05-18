@@ -1,0 +1,27 @@
+.explore-page-container{
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-areas: 
+  "sidebar  categoryContainer categoryContainer"
+  "sidebar  videoList videoList";
+  
+}
+
+.video-listing{
+    grid-area: videoList;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill,18rem);
+    grid-auto-rows: 18rem; 
+    grid-gap: 1rem;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+
+.info-message{
+    position: absolute;
+    left: 20rem;
+    top: 10rem;
+    color: white;
+}

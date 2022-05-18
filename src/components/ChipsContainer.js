@@ -6,8 +6,9 @@ export const ChipsContainer = ({ getActiveChip }) => {
     { id: 1, keyName: "All" },
     { id: 2, keyName: "Vegetable Farming" },
     { id: 3, keyName: "Pesticides" },
-    { id: 4, keyName: "Fruit Farming" },
-    { id: 5, keyName: "Indian Farmer" },
+    { id: 4, keyName: "Fertilizers" },
+    { id: 5, keyName: "Fruit Farming" },
+    { id: 6, keyName: "Indian Farmer" },
   ];
 
   const [isActiveChip, setIsActiveChip] = useState(0);

@@ -11,12 +11,16 @@ import { Playlist } from "../pages/Playlist";
 import { RequiresAuth } from "./RequiresAuth";
 import { WatchLater } from "../pages/WatchLater";
 import { SingleVideo } from "../pages/SingleVideo";
+import { SearchPage } from "../pages/SearchPage";
+import { ErrorPage } from "../pages/ErrorPage";
 
 export const PageRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/explore" element={<Explore />} />
+      <Route path="/search" element={<SearchPage />} />
+      <Route path="*" element={<ErrorPage />} />
       <Route
         path="/playlist"
         element={
