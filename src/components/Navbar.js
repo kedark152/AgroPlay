@@ -19,10 +19,18 @@ export const Navbar = ({ setSearchQuery }) => {
     navigate("/");
     dispatchVideoAction({ type: "CLEAR-STATE" });
   };
+  var windowWidth = window.innerWidth;
+
   return (
     <>
       <nav id="nav-bar">
-        <div className="nav-brand">
+        <div
+          className={
+            location.pathname === "/search" && windowWidth < 800
+              ? `display-none`
+              : `nav-brand`
+          }
+        >
           <Link to="/">
             AgroPlay <i className="material-icons">play_circle</i>
           </Link>
@@ -40,6 +48,11 @@ export const Navbar = ({ setSearchQuery }) => {
             type="text"
             name="search-bar"
             id="search-bar"
+            className={
+              windowWidth < 800 && location.pathname !== "/search"
+                ? `display-none`
+                : ``
+            }
             placeholder="Search"
             onClick={() => navigate("/search")}
             onChange={(e) => {
@@ -48,8 +61,8 @@ export const Navbar = ({ setSearchQuery }) => {
             autoFocus={location.pathname === "/search"}
           />
         </div>
-        <ul className="nav-pills fs-sm fw-bold ">
-          <li>
+        <div className="nav-pills fs-sm fw-bold ">
+          <div>
             {!auth.isLoggedIn ? (
               <Link to="/login" className="btn btn-solid-icon ">
                 Login
@@ -66,8 +79,8 @@ export const Navbar = ({ setSearchQuery }) => {
                 <i className="material-icons mg-left-xsm">logout</i>
               </button>
             )}
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </>
   );
