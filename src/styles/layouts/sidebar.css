@@ -54,10 +54,11 @@
         position: fixed;
         z-index: 2;
         top: 85vh;
-        width: 100%;
+        width: 110%;
         padding: 10px;
         background-image: var(--dark-black-gradient);
         border-top: 1px solid var(--white);
+        left:-4vw;
     }
 
     .cell-block{
