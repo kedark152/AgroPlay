@@ -98,7 +98,7 @@ export const SingleVideo = () => {
                   </li>
                 </ul>
               </div>
-              <div className="video-details">
+              <div className="video-details mg-bottom-md">
                 <h3 className="video-title-txt">{video.title}</h3>
                 <p className="views-date">
                   {video.views} views • {video.uploadDate}
