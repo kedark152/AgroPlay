@@ -61,11 +61,11 @@ export const SingleVideo = () => {
                 ></iframe>
               </div>
               <div className="video-action-buttons">
-                <ul className="flex fw-bold ">
+                <ul className="flex fw-bold mg-top-xsm ">
                   <li
                     // id="like-video"
                     onClick={() => onClickHandler("like-video")}
-                    className={`align-center mg-xsm ${likeBtnState.style}`}
+                    className={`align-center mg-left-xsm ${likeBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">thumb_up</i>
                     <span className="action-btns-text">
@@ -75,15 +75,15 @@ export const SingleVideo = () => {
                   <li
                     // id="playlist-video"
                     onClick={() => onClickHandler("playlist-video")}
-                    className="align-center mg-xsm"
+                    className="align-center mg-left-xsm"
                   >
                     <i className="material-icons mg-right-xsm">playlist_add</i>
-                    SAVE
+                    <span className="action-btns-text">SAVE</span>
                   </li>
                   <li
                     // id="watch-later-video"
                     onClick={() => onClickHandler("watch-later-video")}
-                    className={`align-center mg-xsm ${watchListBtnState.style}`}
+                    className={`align-center mg-left-xsm ${watchListBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">schedule</i>
                     <span className="action-btns-text">{`${watchListBtnState.text}`}</span>
@@ -94,12 +94,12 @@ export const SingleVideo = () => {
                     onClick={() => onClickHandler("copy-link-video")}
                   >
                     <i className="material-icons mg-right-xsm">link</i>
-                    <span className="action-btns-text">COPY LINK</span>
+                    <span className="action-btns-text">COPY</span>
                   </li>
                 </ul>
               </div>
               <div className="video-details mg-bottom-md">
-                <h3 className="video-title">{video.title}</h3>
+                <h3 className="video-title-txt">{video.title}</h3>
                 <p className="views-date">
                   {video.views} views • {video.uploadDate}
                 </p>
