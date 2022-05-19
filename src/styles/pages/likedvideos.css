@@ -25,3 +25,16 @@
     top: 10rem;
     color: var(--white);
 }
+
+@media screen and (max-width: 800px) {
+  .liked-videos-page-container{
+    display: flex;
+     flex-direction: column;
+  }
+
+  .liked-videos-page-container .info-message{
+    left: 10vw;
+    top: 40vh;
+    color: var(--white);
+}
+}

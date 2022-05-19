@@ -28,3 +28,16 @@
     top: 15rem;
     color: white;
 }
+
+@media screen and (max-width: 800px) {
+   .search-page-container{
+    display: flex;
+     flex-direction: column;
+  }
+
+  .search-page-container .info-message{
+    left: 10vw;
+    top: 45vh;
+    color: var(--white);
+}
+}

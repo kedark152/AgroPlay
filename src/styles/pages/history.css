@@ -36,3 +36,16 @@
    background-color: var(--success);
  
 }
+
+@media screen and (max-width: 800px) {
+  .history-videos-page-container{
+    display: flex;
+     flex-direction: column;
+  }
+
+ .history-videos-page-container .info-message{
+    left: 10vw;
+    top: 40vh;
+    color: var(--white);
+}
+}
