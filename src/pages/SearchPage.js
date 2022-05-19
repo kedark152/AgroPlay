@@ -27,7 +27,7 @@ export const SearchPage = () => {
       <div className="search-page-container flex">
         <Sidebar />
 
-        <div className="search-query-text white-color fs-sm-plus fw-bold">
+        <div className="search-query-text white-color fs-sm-plus fw-bold mg-sm">
           <h2 className="text-center white-color mg-sm">{`Search Video Page`}</h2>
           {searchQuery.length > 1
             ? `Search Query: "${searchQuery}"`
