@@ -68,7 +68,9 @@ export const SingleVideo = () => {
                     className={`align-center mg-xsm ${likeBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">thumb_up</i>
-                    {`${likeBtnState.text}`}
+                    <span className="action-btns-text">
+                      {`${likeBtnState.text}`}
+                    </span>
                   </li>
                   <li
                     // id="playlist-video"
@@ -84,15 +86,15 @@ export const SingleVideo = () => {
                     className={`align-center mg-xsm ${watchListBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">schedule</i>
-                    {`${watchListBtnState.text}`}
+                    <span className="action-btns-text">{`${watchListBtnState.text}`}</span>
                   </li>
                   <li
                     // id="copy-link-video"
-                    className="align-center mg-xsm"
+                    className="align-center mg-right-xsm"
                     onClick={() => onClickHandler("copy-link-video")}
                   >
                     <i className="material-icons mg-right-xsm">link</i>
-                    COPY LINK
+                    <span className="action-btns-text">COPY LINK</span>
                   </li>
                 </ul>
               </div>
@@ -101,7 +103,7 @@ export const SingleVideo = () => {
                 <p className="views-date">
                   {video.views} views • {video.uploadDate}
                 </p>
-                <p className="video-description ">{video.description}</p>
+                <p className="video-description mg-y-sm">{video.description}</p>
               </div>
             </div>
           )}
