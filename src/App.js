@@ -1,4 +1,3 @@
-import "./App.css";
 import "./styles/common.css";
 import "./styles/layouts/scrollbar.css";
 import "./styles/utils/variables.css";
