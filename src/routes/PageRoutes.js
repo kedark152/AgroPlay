@@ -53,8 +53,15 @@ export const PageRoutes = () => {
           </RequiresAuth>
         }
       />
+      <Route
+        path="/profile"
+        element={
+          <RequiresAuth>
+            <MyProfile />
+          </RequiresAuth>
+        }
+      />
 
-      <Route path="/profile" element={<MyProfile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/watch/:videoId" element={<SingleVideo />} />

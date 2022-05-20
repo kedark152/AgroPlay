@@ -61,47 +61,49 @@ export const SingleVideo = () => {
                 ></iframe>
               </div>
               <div className="video-action-buttons">
-                <ul className="flex fw-bold ">
+                <ul className="flex fw-bold mg-top-xsm ">
                   <li
                     // id="like-video"
                     onClick={() => onClickHandler("like-video")}
-                    className={`align-center mg-xsm ${likeBtnState.style}`}
+                    className={`align-center mg-left-xsm ${likeBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">thumb_up</i>
-                    {`${likeBtnState.text}`}
+                    <span className="action-btns-text">
+                      {`${likeBtnState.text}`}
+                    </span>
                   </li>
                   <li
                     // id="playlist-video"
                     onClick={() => onClickHandler("playlist-video")}
-                    className="align-center mg-xsm"
+                    className="align-center mg-left-xsm"
                   >
                     <i className="material-icons mg-right-xsm">playlist_add</i>
-                    SAVE
+                    <span className="action-btns-text">SAVE</span>
                   </li>
                   <li
                     // id="watch-later-video"
                     onClick={() => onClickHandler("watch-later-video")}
-                    className={`align-center mg-xsm ${watchListBtnState.style}`}
+                    className={`align-center mg-left-xsm ${watchListBtnState.style}`}
                   >
                     <i className="material-icons mg-right-xsm">schedule</i>
-                    {`${watchListBtnState.text}`}
+                    <span className="action-btns-text">{`${watchListBtnState.text}`}</span>
                   </li>
                   <li
                     // id="copy-link-video"
-                    className="align-center mg-xsm"
+                    className="align-center mg-right-xsm"
                     onClick={() => onClickHandler("copy-link-video")}
                   >
                     <i className="material-icons mg-right-xsm">link</i>
-                    COPY LINK
+                    <span className="action-btns-text">COPY</span>
                   </li>
                 </ul>
               </div>
-              <div className="video-details mg-bottom-md">
-                <h3 className="video-title">{video.title}</h3>
+              <div className="video-details">
+                <h3 className="video-title-txt">{video.title}</h3>
                 <p className="views-date">
                   {video.views} views • {video.uploadDate}
                 </p>
-                <p className="video-description ">{video.description}</p>
+                <p className="video-description mg-y-sm">{video.description}</p>
               </div>
             </div>
           )}

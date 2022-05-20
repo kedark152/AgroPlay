@@ -6,7 +6,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.600);
     place-items: center;
-    /* display: none; */
     z-index: 1; 
 }
 
@@ -53,4 +52,19 @@
 }
 .hide-playlist-box{
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .playlist-box-container{
+          left: 20vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    .playlist-box-container{
+          left: 15vw;
+    }
+    .playlist-box-container .material-icons{
+          font-size: 10px;
+    }
+    
 }
