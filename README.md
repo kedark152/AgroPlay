@@ -10,7 +10,7 @@
 ---
 ## About AgroPlay
 
-* AgroPlay is a platform where one can easily find video content relating to Agriculture.
+* AgroPlay is a platform where one can easily find video content related to Agriculture.
 * AgroPlay is aimed to educate, provide awareness & develop interest of youth to innovate & learn recent advancements & Techniques related to farming.
 * In this App, users can see videos based on different categories such as Fertilizers, Pesticides, Hydroponic Farming, Technology, etc.
 * Additionally we have implemented various features such as like videos, add to watch later, create various playlist, add videos to playlist, etc.
@@ -25,7 +25,7 @@ Checkout the live deployment here: [AgroPlay](https://agroplay.netlify.app/)
 ## Features
 
 * [Home Page](https://agroplay.netlify.app/) (public page), with chips container consisting of various topics. User can easily view videos based on selected topics, add to like, watch later & playlist.
-* [Explore Page](https://https://agroplay.netlify.app/explore) (public page), with various categories which Filters videos on selected category. User can also easily add videos to both Watch Later and Playlist using modal box menu on each video card.
+* [Explore Page](https://https://agroplay.netlify.app/explore) (public page), with various categories which Filters videos on selecting a particular category. User can also easily add videos to both Watch Later and Playlist clicking options button on each video card.
 * [Single Video Page](https://agroplay.netlify.app/watch/zUwYQ7BU1vw), (public page) - User can like video, add to watch Later, Add/Remove from Playlist with quick updation, copy video link on button click, User can view video on embed player with information about the video prominently displayed at the bottom. On opening this page, video will be added to User history.
 * Playlist Page, (private page), consists of all User Playlists. User can browse various playlists, check out individual playlist and also delete video from playlist and also entire playlist itself.
 * Watch Later Page (private page), - User can view videos marked to watch later and also delete them.
