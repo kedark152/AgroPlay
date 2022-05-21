@@ -27,11 +27,15 @@ Checkout the live deployment here: [AgroPlay](https://agroplay.netlify.app/)
 * [Home Page](https://agroplay.netlify.app/) (public page), with chips container consisting of various topics. User can easily view videos based on selected topics, add to like, watch later & playlist.
 * [Explore Page](https://https://agroplay.netlify.app/explore) (public page), with various categories which Filters videos on selecting a particular category. User can also easily add videos to both Watch Later and Playlist clicking options button on each video card.
 * [Single Video Page](https://agroplay.netlify.app/watch/zUwYQ7BU1vw), (public page) - User can like video, add to watch Later, Add/Remove from Playlist with quick updation, copy video link on button click, User can view video on embed player with information about the video prominently displayed at the bottom. On opening this page, video will be added to User history.
-* Playlist Page, (private page), consists of all User Playlists. User can browse various playlists, check out individual playlist and also delete video from playlist and also entire playlist itself.
+* Playlist Page, (private page), consists of all User Playlists. User can browse various playlists, delete a video from playlist and also delete entire playlist.
 * Watch Later Page (private page), - User can view videos marked to watch later and also delete them.
 * History Page (private page), - User can view previously watched videos, delete a video from list and also clear all history.
 * Liked Videos Page (private page), - User can view and delete their liked videos.
+* Search Page - When user clicks on Search Bar, it will get re-directed to search page.
+* [404 Page](https://agroplay.netlify.app/dejdj) - Added 404 Page Not Found.
+* Profile Page (private page) - Profile Page shows name, email of logged in user and Quick Links for private pages. 
 * Added Responsiveness for nearly all devices from 350px onwards.
+* Loaders & Alerts: Loaders are added when videos are fetching, React Toastify is used for alerts message
 * Note:- 'Public Page'- Opens without Authentication, 'Private Page' - Opens only if user is Authenticated otherwise opens Login Page.
 
 ---
@@ -45,6 +49,8 @@ Checkout the live deployment here: [AgroPlay](https://agroplay.netlify.app/)
 - Backend setup using [MockBee](https://mockbee.netlify.app/)
 - Netlify for Deployment
 - Cloudinary for Hosting of Images
+- [Flaticons](https://www.flaticon.com/) for colorful icons.
+- React Toastify for alerts. 
 
 ---
 ## Issues & Suggestions
