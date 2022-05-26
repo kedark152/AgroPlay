@@ -114,8 +114,8 @@ export const Login = () => {
             className="btn btn-outline fw-bold white-color"
             onClick={() =>
               setTestData({
-                email: "adarshbalika@gmail.com",
-                password: "adarshBalika123",
+                email: "kedar@gmail.com",
+                password: "kedarInGoa@123",
               })
             }
           >
