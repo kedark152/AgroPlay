@@ -12,7 +12,7 @@ import "../styles/pages/explore.css";
 export const Explore = () => {
   const { loader, videos } = GetVideos();
   const { videoActionState } = useVideoAction();
-  const [activeCard, setActiveCard] = useState("");
+  const [activeCard, setActiveCard] = useState("Fertilizers");
 
   let displayVideos = [];
 
