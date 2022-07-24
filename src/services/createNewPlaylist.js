@@ -1,10 +1,12 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import { addVideoToPlaylist } from "./addVideoToPlaylist";
 
 export const createNewPlaylist = async (
   playlistName,
   dispatchVideoAction,
-  auth
+  auth,
+  activeVideo
 ) => {
   try {
     const response = await axios.post(
@@ -17,11 +19,19 @@ export const createNewPlaylist = async (
       }
     );
     const playlists = response.data.playlists;
+    const newlyCreatedPlaylist = playlists[playlists.length - 1];
     dispatchVideoAction({
       type: "CREATE-NEW-PLAYLIST",
       payload: playlists,
     });
-    toast.success(`Created New Playlist: ${playlistName}`);
+
+    addVideoToPlaylist({
+      auth,
+      activeVideo,
+      playlistId: newlyCreatedPlaylist._id,
+      playlistName,
+      dispatchVideoAction,
+    });
   } catch (error) {
     console.log("createNewPlaylist.js", error);
     toast.error("Error to create new playlist");

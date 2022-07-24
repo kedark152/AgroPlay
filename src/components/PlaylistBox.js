@@ -15,14 +15,18 @@ export const PlaylistBox = () => {
     let playlistName = e.target.value;
 
     if (e.keyCode === 13) {
-      console.log(videoActionState.playlist);
       if (!playlistName || /^\s*$/.test(playlistName)) {
         //For checking if a playlistName is falsey or if the playlistName only contains whitespace
         toast.error("Please enter valid playlist name");
         setPlaylistValue("");
       } else {
         setPlaylistValue("");
-        createNewPlaylist(playlistName, dispatchVideoAction, auth);
+        createNewPlaylist(
+          playlistName,
+          dispatchVideoAction,
+          auth,
+          videoActionState.activeVideo
+        );
       }
     }
   };
