@@ -262,7 +262,7 @@ export const videos = [
     title: "Farmers safety shoes | किसानों के सुरक्षा कवच जूते  ",
     creator: "Kisan Farming",
     profileUrl:
-      "https://yt3.ggpht.com/rNBjPhgEpO_5i4529OQtj9zjdE6WCX-FPJT9UisNRuQdeKaPo81l418l1Lx7S8qX2nTZPRa5z64=s176-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2YjxoODi2Q12U9cYX5N9ThqlXOGd7i9tk1MKeDrzM5tHUEcp4YTKvMOpjRh9xCdM0KCqVJuYM4U=s176-c-k-c0x00ffffff-no-rj",
     views: "22048",
     uploadDate: "Oct 1, 2021",
     videoLength: "03:36",
@@ -341,7 +341,7 @@ export const videos = [
     title: "Earth auger । Pit digger । Farming machinery",
     creator: "Kisan Farming",
     profileUrl:
-      "https://yt3.ggpht.com/rNBjPhgEpO_5i4529OQtj9zjdE6WCX-FPJT9UisNRuQdeKaPo81l418l1Lx7S8qX2nTZPRa5z64=s176-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2YjxoODi2Q12U9cYX5N9ThqlXOGd7i9tk1MKeDrzM5tHUEcp4YTKvMOpjRh9xCdM0KCqVJuYM4U=s176-c-k-c0x00ffffff-no-rj",
     views: "896006",
     uploadDate: "Oct 31, 2020",
     videoLength: "08:37",
