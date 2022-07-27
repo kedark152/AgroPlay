@@ -54,7 +54,7 @@ Checkout the live deployment here: [AgroPlay](https://agroplay.netlify.app/)
 
 ---
 ## Issues & Suggestions
-- If you face any issues while using the app, then you can surely raise issue on this repo.
+- If you face any issues while using the app, then you can surely raise issue in this repo.
 - You can also give your valuable suggestions/ feedback to improve this project via Email (Mail-id in below section).
 
  ## Connect with me:
