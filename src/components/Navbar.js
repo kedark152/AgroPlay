@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useVideoAction } from "../context/video-action-context";
 import { useLocation } from "react-router-dom";
+import { DebounceInput } from "react-debounce-input";
 
 export const Navbar = ({ setSearchQuery }) => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export const Navbar = ({ setSearchQuery }) => {
             AgroPlay <i className="material-icons">play_circle</i>
           </Link>
         </div>
-        <div className="search-field">
+        <div className="search-video-field">
           <i
             className="material-icons"
             id="search-icon"
@@ -44,10 +45,12 @@ export const Navbar = ({ setSearchQuery }) => {
             search
           </i>
 
-          <input
+          <DebounceInput
+            minLength={2}
+            debounceTimeout={500}
             type="text"
             name="search-bar"
-            id="search-bar"
+            id="search-video-bar"
             className={
               windowWidth < 800 && location.pathname !== "/search"
                 ? `display-none`
