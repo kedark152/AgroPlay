@@ -101,9 +101,6 @@ export const Login = () => {
           <div className="remember-item mg-xsm fw-bold align-center">
             <input type="checkbox" className="mg-xsm" id="remember" />
             <label htmlFor="terms">Remember Me</label>
-            <Link to="/login" className="forgot-password">
-              Forgot Password?
-            </Link>
           </div>
           {/* Buttons */}
           <button type="submit" className="btn btn-solid fw-bold ">
