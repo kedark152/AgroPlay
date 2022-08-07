@@ -1,65 +1,73 @@
-.signup-container{
-    width: 100%;
-    font-family: var(--montserrat-font);
-    margin: 0;
-    min-height: 100vh;
-    max-height: max-content;
+.signup-container {
+  width: 100%;
+  font-family: var(--montserrat-font);
+  margin: 0;
+  min-height: 100vh;
+  max-height: max-content;
 }
-.signup-card{
-    display: flex;
-    flex-direction: column;
-    width: 28rem;
-    color: var(--white);
-    border-radius: var(--radius-md);
-    background: var(--login-bg-color);
-    box-shadow: var(--login-card-shadow);
-    height: fit-content;
-    padding: var(--size-sm) var(--size-md) ;
-    margin: 2rem 0;
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  color: var(--white);
+  border-radius: var(--radius-md);
+  background: var(--login-bg-color);
+  box-shadow: var(--login-card-shadow);
+  height: fit-content;
+  padding: var(--size-sm) var(--size-md);
+  margin: 2rem 0;
 }
-.signup-card input[type="checkbox"]{
-    width: 1rem;
-    height: 1rem;
-    accent-color: var(--success);
+.signup-card input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--success);
 }
-.signup-card input{
- height: var(--size-lg);
+.signup-card input {
+  height: var(--size-lg);
   font-size: 1.1rem;
   border: none;
   border-bottom: solid rgb(143, 143, 143) 1px;
   background: none;
-  color:var(--login-input-txt);
+  color: var(--login-input-txt);
 }
 
-.signup-pwd-show-icon{
+.signup-pwd-show-icon {
   cursor: pointer;
 }
 
-.signup-card .btn{
-    padding: 1rem;
-    border: none;
-    justify-content: center;
-    width: 100%;
-    margin: 0.5rem;
-    color:var(--white);
+.signup-card .btn-create-account,
+.signup-card .btn-login {
+  padding: 1rem;
+  border: none;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem;
+  color: var(--white);
 }
 
-.signup-card .btn-outline-icon:hover{
-     background-color: transparent;
-     color: var(--lime-green);
- }
-
-.password-item, .confirm-password-item{
-    position: relative;
-}
-.signup-pwd-show-icon{
-    position: absolute;
-    top: 1.75rem;
-    right: 5px; 
+.signup-card .btn-outline-icon:hover {
+  background-color: transparent;
+  color: var(--lime-green);
 }
 
-@media only screen and (max-width: 800px){
-    .signup-card{
-        width: fit-content;
-    }
+.password-item,
+.confirm-password-item {
+  position: relative;
+}
+.signup-pwd-show-icon {
+  position: absolute;
+  top: 1.75rem;
+  right: 5px;
+}
+
+.btn-fill-dummy-data {
+  margin: 0;
+  margin-left: auto;
+  width: 11rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .signup-card {
+    width: fit-content;
+  }
 }

@@ -38,6 +38,10 @@ export const Signup = () => {
       // saving the encodedToken in the localStorage
       localStorage.setItem("token", response.data.encodedToken);
       setAuth({ ...auth, token: response.data.encodedToken, isLoggedIn: true });
+      localStorage.setItem(
+        "userData",
+        JSON.stringify(response.data.createdUser)
+      );
       toast.success("Sign up Successful!!");
       navigate("/");
     } catch (error) {
@@ -46,6 +50,15 @@ export const Signup = () => {
     }
   };
 
+  const fillDummyData = (e) => {
+    e.preventDefault();
+    const form = editSignupForm.current;
+    form["firstName"].value = "Ram";
+    form["lastName"].value = "Mishra";
+    form["emailId"].value = "ram.mishra@gmail.com";
+    form["passwordField"].value = "ramMishra@123";
+    form["confirmPasswordField"].value = "ramMishra@123";
+  };
   return (
     <div className="Signup Pages">
       <Navbar />
@@ -58,6 +71,12 @@ export const Signup = () => {
         <div className="signup-card">
           {/* Heading */}
           <h2 className="text-center mg-xsm">Signup</h2>
+          <button
+            className="btn btn-solid btn-fill-dummy-data"
+            onClick={(e) => fillDummyData(e)}
+          >
+            Fill Dummy Data
+          </button>
           {/* Full-Name */}
           <div className="full-name-item flex-column mg-xsm fw-bold">
             <label htmlFor="first-name">First Name</label>
@@ -162,12 +181,12 @@ export const Signup = () => {
           {/* Buttons */}
           <button
             href=""
-            className="btn btn-solid fw-bold primary-bg-color"
+            className="btn btn-solid btn-create-account fw-bold primary-bg-color"
             type="submit"
           >
             Create New Account
           </button>
-          <Link to="/login" className="btn btn-outline-icon fw-bold">
+          <Link to="/login" className="btn btn-outline-icon btn-login fw-bold">
             Already have an account?
             <i className="material-icons">chevron_right</i>
           </Link>
