@@ -1,59 +1,56 @@
-.video-card-container{
-    color: var(--white);
-    cursor: pointer;
-    position: relative;
-    
+.video-card-container {
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
 }
 
-.thumbnail-img{
-    width: 18rem;
-    cursor: pointer;
+.thumbnail-img {
+  width: 18rem;
+  cursor: pointer;
 }
 
-.profile-img{
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
+.profile-img {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-.video-details-text{
-    width: 13rem;
-    height: max-content;
-    gap: 5px;
-    
+.video-details-text {
+  width: 13rem;
+  height: max-content;
+  gap: 5px;
 }
 
-.video-title{
-    line-height: 1.4em;
-    max-height: 3em;
-    display: -webkit-box;
-    overflow:hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+.video-title {
+  line-height: 1.4em;
+  max-height: 3em;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.creator-name{
-   color: var(--grey-lightest);
+.creator-name {
+  color: var(--grey-lightest);
 }
-.creator-name:hover{
-   color: var(--white);
-   
-}
-
-.material-icons{
-    cursor: pointer;
+.creator-name:hover {
+  color: var(--white);
 }
 
-.profile-img-box{
-    position: relative;
+.material-icons {
+  cursor: pointer;
 }
 
-.video-time{
-    background-color: black;
-    color: var(--white);
-    padding: 2px 4px;
-    width: fit-content;
-    position: absolute;
-    top: -2rem;
-    right: -15rem;
+.profile-img-box {
+  position: relative;
+}
+
+.video-time {
+  background-color: black;
+  color: var(--white);
+  padding: 2px 4px;
+  width: fit-content;
+  position: absolute;
+  top: -2rem;
+  right: -14.4rem;
 }
